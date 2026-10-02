@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Favorite person 🚌</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="opening-screen" id="openingScreen" role="status" aria-live="polite">
+        <div class="opening-content">
+            <div class="opening-gift" aria-hidden="true">💝</div>
+            <p class="opening-kicker" data-i18n="openingKicker">A little birthday surprise</p>
+            <h1 data-i18n="openingTitle">For My Dearest Krunal</h1>
+            <p class="opening-message" data-i18n="openingMessage">Getting your surprise ready...</p>
+            <div class="loading-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="opening-spinner" aria-hidden="true">🚌</div>
+            <button class="language-btn opening-language" type="button" aria-label="Translate page to Gujarati">T</button>
+        </div>
+    </section>
+
+    <section class="music-prompt" id="musicPrompt" role="dialog" aria-modal="true" aria-labelledby="musicPromptTitle" hidden>
+        <div class="music-prompt-backdrop"></div>
+        <div class="music-prompt-card">
+            <button class="language-btn prompt-language" type="button" aria-label="Translate page to Gujarati">T</button>
+            <div class="prompt-note" aria-hidden="true">♫</div>
+            <h2 id="musicPromptTitle" data-i18n="promptTitle">Play a love song?</h2>
+            <p data-i18n="promptMessage">Would you like to play a Gujarati love song while you explore this birthday surprise?</p>
+            <button class="prompt-yes" id="playMusicButton" type="button" data-i18n="promptYes">♫ Yes, play music</button>
+            <button class="prompt-no" id="skipMusicButton" type="button" data-i18n="promptNo">Maybe later</button>
+        </div>
+    </section>
+
+    <aside class="floating-music" id="floatingMusic" aria-label="Birthday music player" hidden>
+        <button class="music-close" id="closeMusicButton" type="button" aria-label="Close music player">×</button>
+        <p class="floating-music-status" data-i18n="playerStatus">NOW PLAYING</p>
+        <h2 data-i18n="playerSongTitle">Your song</h2>
+        <p class="floating-music-note" data-i18n="playerNote">A love song for Krunal</p>
+        <div class="floating-music-frame">
+            <audio id="birthdaySong" controls preload="metadata" src="videos/birthday-song.mp3">
+                Your browser does not support audio playback.
+            </audio>
+        </div>
+    </aside>
+
+    <nav class="navbar">
+        <div class="logo">🚌 Bebu🤗</div>
+
+        <div class="nav-links">
+            <a href="#home" data-i18n="navHome">Home</a>
+            <a href="#journey" data-i18n="navJourney">Our Journey</a>
+            <a href="#memories" data-i18n="navMemories">Memories</a>
+            <a href="#sweet" data-i18n="navTreats">Sweet</a>
+            <a href="#letter" data-i18n="navLetter">Letter</a>
+            <a href="#surprise" data-i18n="navSurprise">Surprise</a>
+        </div>
+
+        <div class="nav-controls">
+            <button class="language-btn" type="button" aria-label="Translate page to Gujarati">T</button>
+            <button class="theme-btn" aria-label="Toggle theme">🌙</button>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-glow"></div>
+        <div class="section-hearts hearts-home" aria-hidden="true"><span>❤</span><span>❤</span><span>❤</span></div>
+
+        <div class="hero-content">
+            <div class="hero-initial" aria-hidden="true">K</div>
+            <p class="eyebrow" data-i18n="eyebrow">A birthday route made for Krunal</p>
+            <h1 data-i18n="heroTitle">Happy Birthday <span>Krunal</span><span class="hero-emoji">🧿</span>🎉</h1>
+            <p class="subtitle" data-i18n="heroSubtitle">
+                Your kindness makes every road brighter. Today, this whole route is yours. 🚌
+            </p>
+
+            <div class="hero-actions">
+                <button class="start-btn" onclick="startJourney()" data-i18n="startRoute">🚌 Start Birthday Route</button>
+                <a class="secondary-btn" href="#letter" data-i18n="readLetter">Read Your Bebu's Letter</a>
+            </div>
+        </div>
+
+        <div class="birthday-scene" role="img" aria-label="A birthday bus with its driver winking at a shy girl">
+            <div class="scene-hearts" aria-hidden="true"><span>♥</span><span>♥</span><span>✦</span></div>
+            <div class="route-bus" aria-hidden="true">
+                <div class="bus-window">
+                    <span class="driver-wink">😉</span>
+                </div>
+                <strong class="bus-route-label" data-i18n="busLabel">Birthday Route</strong>
+                <span class="bus-wheel bus-wheel-front"></span>
+                <span class="bus-wheel bus-wheel-back"></span>
+            </div>
+            <div class="shy-passenger" aria-hidden="true">
+                <span class="passenger-heart">💗</span>
+                <span class="passenger-figure">👩🏻</span>
+                <span class="passenger-blush passenger-blush-left"></span>
+                <span class="passenger-blush passenger-blush-right"></span>
+            </div>
+            <div class="scene-road" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <main class="content">
+        <section id="journey" class="section story">
+            <div class="section-hearts hearts-journey" aria-hidden="true"><span>❤</span><span>❤</span><span>❤</span></div>
+            <div class="journey-side journey-left">
+                <div class="side-video-frame">
+                    <video class="side-video" autoplay muted loop playsinline>
+                        <source src="videos/journey-3.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="story-card">
+                    <div class="icon">✨</div>
+                    <h3 data-i18n="bestDriverTitle">Best driver ever</h3>
+                    <p data-i18n="bestDriverText">You handle every route with patience, care, and a smile that makes every passenger happy.</p>
+                </div>
+            </div>
+
+            <div class="journey-center">
+                <div class="journey-media">
+                    <div class="journey-title">
+                        <h2 data-i18n="journeyTitle">Our Journey</h2>
+                    </div>
+                    <video class="journey-video" autoplay muted loop playsinline>
+                        <source src="videos/journey.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="story-card">
+                    <div class="icon">💫</div>
+                    <h3 data-i18n="favoriteRouteTitle">My favorite route</h3>
+                    <p data-i18n="favoriteRouteText">No matter where the bus goes, my favorite destination will always be wherever you are.</p>
+                </div>
+            </div>
+
+            <div class="journey-side journey-right">
+                <div class="story-card">
+                    <div class="icon">🌷</div>
+                    <h3 data-i18n="passengerTitle">Passenger for life</h3>
+                    <p data-i18n="passengerText">I will happily sit beside you through every stop, every turn, and every adventure ahead.</p>
+                </div>
+                <div class="side-video-frame">
+                    <video class="side-video" autoplay muted loop playsinline>
+                        <source src="videos/journey-2.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section id="memories" class="section memories">
+            <div class="section-hearts hearts-memories" aria-hidden="true"><span>❤</span><span>❤</span><span>❤</span></div>
+            <div class="memories-header">
+                <p data-i18n="memoriesTitle">Memories</p>
+            </div>
+
+            <div class="memories-showcase">
+                <div class="memory-column memory-column-left">
+                    <div class="memory-card" data-i18n="memoryOne">Your uniform, your smile, and your kind heart 🚌</div>
+                    <div class="memory-card" data-i18n="memoryTwo">Every bus stop becomes special when I see you 🌙</div>
+                </div>
+ 
+                <div class="memories-video-wrap">
+                    <div class="video-frame">
+                        <video class="memories-video" autoplay muted loop playsinline>
+                            <source src="videos/journey-4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <div class="memory-column memory-column-right">
+                    <div class="memory-card" data-i18n="memoryThree">The way you make every journey feel safe 💖</div>
+                    <div class="memory-card" data-i18n="memoryFour">My favorite seat is always beside you 🫶</div>
+                </div>
+            </div>
+
+            <div class="memories-footer">
+                <span data-i18n="memoryFooter">My favorite route is always with you</span>
+            </div>
+        </section>
+
+        <section id="sweet" class="section sweet">
+            <div class="section-hearts hearts-sweet" aria-hidden="true"><span>❤</span><span>❤</span><span>❤</span></div>
+            <div class="section-title">
+                <p data-i18n="treatsTitle">Sweet</p>
+                <h2 data-i18n="treatsSubtitle">Because my sweetheart deserves chocolates 🍫</h2>
+            </div>
+
+            <div class="chocolate-row">
+                <div class="chocolate-card">
+                    <span class="chocolate-icon">🍫</span>
+                    <h3 data-i18n="milkChocolateTitle">Milk Chocolate</h3>
+                    <p data-i18n="milkChocolateText">For every sweet smile you give me.</p>
+                </div>
+                <div class="chocolate-card featured-chocolate">
+                    <span class="chocolate-icon">🎁</span>
+                    <h3 data-i18n="birthdayBoxTitle">Birthday Box</h3>
+                    <p data-i18n="birthdayBoxText">A special box for my special sweet person.</p>
+                </div>
+                <div class="chocolate-card">
+                    <span class="chocolate-icon">🍬</span>
+                    <h3 data-i18n="sweetBitesTitle">Sweet Bites</h3>
+                    <p data-i18n="sweetBitesText">Little treats for my favorite person.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="letter" class="section letter-box">
+            <div class="section-hearts hearts-letter" aria-hidden="true"><span>❤</span><span>❤</span><span>❤</span></div>
+            <div class="section-title">
+                <p data-i18n="letterTitle">Letter</p>
+                <h2 data-i18n="letterSubtitle">To my handsome sweetheart</h2>
+            </div>
+
+            <div class="letter-card">
+                <p data-i18n="letterParagraphOne">
+                    Happy Birthday to the coolest sweetheart. Today we are celebrating your passion, your hard work,
+                    your kind heart, and the way you make every journey feel special.
+                </p>
+                <p data-i18n="letterParagraphTwo">
+                    I hope this year brings you smooth roads, green signals, peaceful shifts, warm memories, and all the
+                    happiness you deserve. May every wish of yours come true and every route lead you closer to your dreams.
+                </p>
+                <p data-i18n="letterParagraphThree">
+                    You are my favorite sweetheart, my safe place, and my forever travel partner. I am so proud of you,
+                    and I will always be your most loyal passenger on this beautiful journey called life.
+                </p>
+                <p class="signoff" data-i18n="letterSignoff">Your forever passenger, always 🚌</p>
+            </div>
+        </section>
+
+        <section id="surprise" class="section surprise-box">
+            <div class="section-hearts hearts-surprise" aria-hidden="true"><span>❤</span><span>❤</span><span>❤</span></div>
+            <div class="surprise-card">
+                <h3 data-i18n="surpriseTitle">Next stop: Birthday Surprise ✨</h3>
+                <p data-i18n="surpriseText">Show your special birthday ticket to reveal a message from your favorite passenger.</p>
+                <button class="wish-btn" onclick="showMessage()" data-i18n="ticketButton">Punch My Birthday Ticket</button>
+                <p id="wish-message" class="wish-message"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" data-i18n="footer">Made with your bittu ❤️</footer>
+
+    <script src="script.js?v=gujarati-toggle-1"></script>
+</body>
+</html>
