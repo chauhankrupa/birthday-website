@@ -170,6 +170,7 @@ const openingSpinner = document.querySelector('.opening-spinner');
 const musicPrompt = document.getElementById('musicPrompt');
 const floatingMusic = document.getElementById('floatingMusic');
 const birthdaySong = document.getElementById('birthdaySong');
+const replayMusicButton = document.getElementById('replayMusicButton');
 
 function showMusicPrompt() {
     if (musicPrompt.hidden === false) {
@@ -191,14 +192,19 @@ function enterBirthdayPage(playMusic) {
     document.body.classList.add('site-open');
 
     if (playMusic) {
-        floatingMusic.hidden = false;
-        birthdaySong.currentTime = 0;
-        birthdaySong.play();
+        playBirthdaySong();
     }
+}
+
+function playBirthdaySong() {
+    floatingMusic.hidden = false;
+    birthdaySong.currentTime = 0;
+    birthdaySong.play();
 }
 
 document.getElementById('playMusicButton').addEventListener('click', () => enterBirthdayPage(true));
 document.getElementById('skipMusicButton').addEventListener('click', () => enterBirthdayPage(false));
+replayMusicButton.addEventListener('click', playBirthdaySong);
 document.getElementById('closeMusicButton').addEventListener('click', () => {
     birthdaySong.pause();
     birthdaySong.currentTime = 0;
